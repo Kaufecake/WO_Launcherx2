@@ -38,11 +38,16 @@ LAUNCHER_CONFIG_DEFAULT = {
     },
     'LAUNCH-DEFAULT': {
         'Name': 'Default',
-        'Options': '-XX:+UseShenandoahGC -Xmx4G -Xms256M'
+        'Options': '-XX:+UseG1GC -XX:MaxGCPauseMillis=8 '
+                   '-XX:MinHeapFreeRatio=11 -XX:MaxHeapFreeRatio=18'
     },
     'LAUNCH-LOWMEM': {
         'Name': 'Low Memory',
         'Options': '-Xmx1G -Xms128M'
+    },
+    'LAUNCH-LOWLATENCY': {
+        'Name': "Low Latency",
+        'Options': '-XX:+UseShenandoahGC -Xmx4G -Xms256M'
     },
     'CLIENT': {
         'Name': 'Live'
