@@ -407,6 +407,7 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--steam', action='store_true', help="Use Steam integration")
 
     args, unknown_args = parser.parse_known_args()
+    logger.setLevel(logging.INFO)
     if args.verbose:
         logger.setLevel(logging.DEBUG)
     if args.quiet:
