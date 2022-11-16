@@ -16,7 +16,7 @@ Features
 
 Prerequisites
 ---
-- Python 3 >= 3.6
+- Python 3 >= 3.7
 
 Usage
 ---
