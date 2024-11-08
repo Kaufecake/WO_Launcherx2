@@ -12,7 +12,7 @@ import os
 import configparser
 import platform
 import datetime
-import cgi
+from email.message import EmailMessage
 import shutil
 import hashlib
 from functools import lru_cache
@@ -97,11 +97,8 @@ class Dependency:
             remote_modified = datetime.datetime.strptime(response.getheader('Last-Modified'),
                                                          '%a, %d %b %Y %H:%M:%S %Z')
             if self.file_name is None:
-                try:
-                    value, params = cgi.parse_header(response.getheader('Content-Disposition'))
-                    self.file_name = params['filename']
-                except:
-                    pass
+                headers = response.headers
+                self.file_name = headers.get_filename()
         if self.file_name is None:
             url_parsed = urllib.parse.urlparse(self.url)
             path = PurePosixPath(urllib.parse.unquote(url_parsed.path))
