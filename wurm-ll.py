@@ -57,7 +57,7 @@ LAUNCHER_CONFIG_DEFAULT = {
         'Type': 'ga'
     },
     'JFX': {
-        'Version': '17.0.2'
+        'Version': '17.0.13'
     },
     'JCEF': {}
 }
