@@ -12,7 +12,6 @@ import os
 import configparser
 import platform
 import datetime
-from email.message import EmailMessage
 import shutil
 import hashlib
 from functools import lru_cache
