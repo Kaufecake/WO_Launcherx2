@@ -1,45 +1,44 @@
-Wurm Launcher Launcher
-===
+# WO_Launcherx2
 
-Annoyed with the old and buggy version of Java bundled with Wurm Online I set out to get the game running on modern Java. What started as a small shell script eventually grew as I hacked together more features to work around further annoyances.
+**A modernized and user-friendly launcher for Wurm Online.**
 
-I am releasing it in case anyone else finds it useful. I will maintain it as long I keep using it and/or until it is made obsolete by the Wurm developers.
+The WO_Launcherx2 project is a refreshed and improved version of the original Wurm Launcher Launcher (wurm-ll), originally created by Bato (link: [https://gitlab.com/fb0/wurm-ll](https://gitlab.com/fb0/wurm-ll)). This new version aims to provide a smoother, more accessible experience while respecting user privacy and modern standards.
 
-Features
----
- - Bootstrap and launch a Wurm Online client from scratch (Java, JFX, other dependencies)
- - Launch Wurm with a variety of pre-defined Java options and alternate client binaries
-     - Of note: Alternate garbage collectors like Shenandoah are supported for a smoother frame rate
- - Launch with Steam integration (`-s`) to log in Steam characters (needs Steam to be running)
- - Works on Linux, probably works on Windows
- - Uses only the Python standard library
+## Key Improvements
+- **User Privacy**: Eliminated unnecessary third-party network connections to protect user privacy.
+- **Preserve Client Binaries**: Changing the desired client no longer overwrites the old client binary.
+- **Installation Improvements**: Added a `setup.py` for a more streamlined installation process.
+- **Respect XDG Spec**: Configurations and data files are now stored in locations consistent with the XDG Base Directory Specification.
+- **Graphical User Interface**: Added a new Tk/Tcl GUI for an easier and more intuitive user experience.
+- **Windows Executable**: Added the ability to compile the launcher into a standalone `.exe` file with an embedded Python interpreter for Windows users.
 
-Prerequisites
----
-- Python 3 >= 3.7
+## Features
+- Bootstrap and launch a Wurm Online client from scratch, including Java, JFX, and other dependencies.
+- Launch Wurm with a variety of pre-defined Java options and alternate client binaries.
+  - Supports alternate garbage collectors like Shenandoah for smoother frame rates.
+- Launch with Steam integration (`-s`) to log in Steam characters (requires Steam to be running).
+- Works on Linux and Windows.
+- Uses only the Python standard library for simplicity and maintainability.
 
-Usage
----
-Simply run `wurm-ll.py`, either directly or from a terminal. `wurm-ll.py -h` prints a list of options.
+## Prerequisites
+- Python 3 (>= 3.7) if not using the `.exe` version.
 
-When run for the first time `wurm-ll.py` will automatically bootstrap its environment in the folder the file is in.
+## Usage
+Simply run `WO_Launcherx2.py`, either directly or from a terminal. `WO_Launcherx2.py -h` prints a list of options.
 
-Known Issues
----
+When run for the first time, `WO_Launcherx2.py` will automatically bootstrap its environment.
 
-- The code is a horrible mess of hacks
-- Each start of the launcher leads to a few unnecessary network connections to third parties
-- Changing the desired client overwrites the old client binary
-- The code is a horrific mess
-- No setup.py or similar
-- Does not respect XDG spec, and it probably should
-- No versioning, no releases
-- Logging is very inconsistent
+## Known Issues
+- Inconsistent logging behavior.
+- Limited testing on macOS, functionality may vary.
 
-Future work
----
-After fixing the above, I plan to work on the following:
+## Future Work
+- Improve the logging system for better debugging and maintenance.
+- Create `.desktop` files on Linux and shortcuts on Windows for easier access.
+- Expand testing to macOS.
 
-- Create .desktop files on Linux, Shortcuts on Windows
-- Windows: Perhaps compile the script to an .exe with an embedded Python interpreter
-- Use Tk/Tcl to provide a simple GUI
+## Acknowledgments
+WO_Launcherx2 is inspired by Bato's original project, Wurm Launcher Launcher ([wurm-ll](https://gitlab.com/fb0/wurm-ll)). Bato's contributions laid the foundation for this enhanced version, and this project pays tribute to his pioneering work in making Wurm Online more accessible to the community.
+
+## Repository
+The WO_Launcherx2 project is open source and hosted on GitHub: [https://github.com/Kaufecake/WO_Launcherx2](https://github.com/Kaufecake/WO_Launcherx2). Contributions, issues, and suggestions are welcome!
